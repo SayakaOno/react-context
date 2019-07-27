@@ -7,7 +7,9 @@ const Button = () => {
       {({ theme, changeTheme }) => {
         return (
           <button
-            onClick={() => changeTheme('yellow')}
+            onClick={() =>
+              theme === 'blue' ? changeTheme('yellow') : changeTheme('blue')
+            }
             style={{ backgroundColor: theme }}
           >
             Click!

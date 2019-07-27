@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Toolbar from './Toolbar';
 
 export const ThemeContext = React.createContext({
@@ -8,7 +8,11 @@ export const ThemeContext = React.createContext({
 
 const App = () => {
   const changeTheme = theme => setTheme(theme);
-  const [theme, setTheme] = useState('blue');
+  const [theme, setTheme] = useState('red');
+
+  useEffect(() => {
+    setTheme('blue');
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ theme, changeTheme }}>
